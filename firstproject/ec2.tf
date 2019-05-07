@@ -11,6 +11,7 @@ resource "aws_instance" "myserver" {
   instance_type = "t2.micro"
   key_name = "EffectiveDevOpsAWS"
   vpc_security_group_ids = ["sg-066b20ad2fe8c61da"]
+  subnet_id = "subnet-0e48b45ca14fcdb15"
 
   tags {
     Name = "helloworld"
