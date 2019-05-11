@@ -1,5 +1,8 @@
 ---
-# tasks file for nodejs
+# tasks file for enabling epel and nodejs
+
+- name: Enabling EPEL
+  shell: "amazon-linux-extras install epel -y"
 
 - name: Installing node and npm
   yum:

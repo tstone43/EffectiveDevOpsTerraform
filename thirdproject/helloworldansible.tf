@@ -24,11 +24,11 @@ resource "aws_instance" "myserver" {
   }
   
   provisioner "local-exec" {
-    command = "sudo echo '${self.public_ip}' > ./myinventory",
+    command = "echo '${self.public_ip}' > /home/tom/AWS_Stuff/EffectiveDevOpsTerraform/thirdproject/myinventory",
   }
 
   provisioner "local-exec" {
-    command = "sudo ansible-playbook -i myinventory --private-key=/home/tom/.ssh/EffectiveDevOpsAWS.pem helloworld.yml",
+    command = "ansible-playbook -i /home/tom/AWS_Stuff/EffectiveDevOpsTerraform/thirdproject/myinventory --private-key=/home/tom/.ssh/EffectiveDevOpsAWS.pem helloworld.yml",
   }  
 }
 
