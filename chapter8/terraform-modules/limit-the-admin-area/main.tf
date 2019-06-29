@@ -7,18 +7,19 @@ resource "aws_wafregional_ipset" "ipset" {
   }
 }
 
-resource "aws_wafregional_byte_match_set" "ByteMatch" {
+resource "aws_wafregional_byte_match_set" "startrule" {
   name  = "admin"
 
-  byte_match_tuples
-    {
+  byte_match_tuples {
+    text_transformation   = "LOWERCASE"
+      target_string         = "${var.admin_suburl}"
+      positional_constraint = "STARTS_WITH"
+      
       field_to_match {
         type = "URI"
       }
 
-      text_transformation   = "LOWERCASE"
-      target_string         = "${var.admin_suburl}"
-      positional_constraint = "STARTS_WITH"
+      
     }
 }
 
