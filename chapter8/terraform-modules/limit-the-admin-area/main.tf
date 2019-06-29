@@ -7,7 +7,7 @@ resource "aws_wafregional_ipset" "ipset" {
   }
 }
 
-resource "aws_wafregional_byte_match_set" "startrule" {
+resource "aws_wafregional_byte_match_set" "ByteMatch" {
   name  = "admin"
 
   byte_match_tuples

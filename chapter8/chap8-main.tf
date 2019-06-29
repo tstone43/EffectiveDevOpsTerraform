@@ -13,7 +13,7 @@ module "webapp-playground" {
 }
 
 module "limit_admin_WAF" {
-  source       = "github.com/giuseppeborgese/effective_devops_with_aws__second_edition//terraform-modules//limit-the-admin-area"
+  source       = "github.com/tstone43/EffectiveDevOpsTerraform//chapter8//terraform-modules//limit-the-admin-area"
   alb_arn      = "${module.webapp-playground.alb_arn}"
   my_office_ip = "146.241.179.87/32"
   admin_suburl = "/subdir"
